@@ -1,3 +1,9 @@
+/*
+Ejercicio 1:
+Crear una función que acepta una oración de tipo string como parámetro y busca  la palabra que tiene mayor longitud.
+Ejemplo entrada: 'El desarrollo Web es entretenido' 
+Salida: 'entretenido' 
+*/
 
     function buscarPalabra(oracion) {
       const palabras=oracion.split(" ");   //split mete las palabras en un array

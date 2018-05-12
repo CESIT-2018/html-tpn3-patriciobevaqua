@@ -1,3 +1,13 @@
+/*
+Ejercicio 2:
+Dada una cantidad de dinero (entera) y un las monedas posibles, devolver la misma cantidad de dinero en monedas.
+Ejemplo : dameMonedas(46, [25, 10, 5, 2, 1])
+Donde 46 es la cantidad de plata. y 25, 10, 5, 2, 1 son las monedas que existen. 
+Salida : 25, 10, 10, 1
+
+*/
+
+
 function cantMonedas(valor) {
   let resto = valor;
   const monedas = [];
