@@ -12,9 +12,9 @@ Salida: 'entretenido'
         console.info(i);
       }*/
       for(let i in palabras){
-       const pa= palabras[i];
-        if (palabraMasLarga.length<pa.length){
-          palabraMasLarga=pa;
+       const paux= palabras[i];
+        if (palabraMasLarga.length<paux.length){
+          palabraMasLarga=paux;
 
         }
 
@@ -24,4 +24,5 @@ Salida: 'entretenido'
       return palabraMasLarga;
     } 
 
-console.info(buscarPalabra("la programacion web es entretenida"));  
+    console.info("La palabra mas larga es: "+ buscarPalabra("el desarrollo web es entretenido"));  
+    console.info("La palabra más larga es: "+ buscarPalabra("la programacion web es entretenida"));  
