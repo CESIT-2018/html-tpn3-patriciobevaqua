@@ -15,7 +15,7 @@ let numerosNoPrimos = [];
 let numerosPares = [];
 let numerosImpares = [];
 
-//--------Función números pares----------------------------------------------------------------------------------------
+//--------Función números pares----------------------------
 function par(tope, array1, array2) {
   // recorro los numeros para ver si son pares o impares
   let k = 1; //numeroDesde  aplica a numeros pares y no pares
@@ -28,7 +28,7 @@ function par(tope, array1, array2) {
   }
 }
 
-//--------Función números primos----------------------------------------------------------------------------------------
+//--------Función números primos----------------------------
 function primo(tope, array1, array2) {
   // recorro los numeros para ver si son primos o no primos
   let j = 2; //numeroDesde  aplica a numeros primos y no primos
@@ -56,7 +56,7 @@ function primo(tope, array1, array2) {
   }
 }
 
-//--------Función integradora----------------------------------------------------------------------------------------
+//--------Función integradora----------------------------
 function integradora(c,funcion) {
   switch(c){
   case 1:
@@ -78,14 +78,7 @@ function integradora(c,funcion) {
   console.log("Numeros No Primos: " + numerosNoPrimos);
   break;
   }
-  /* if (c===1) {
-    console.log("Numeros Pares: " + numerosPares);
-    console.log("Numeros Impares: " + numerosImpares);
-    
-  } else {
-    console.log("Numeros Primos: " + numerosPrimos);
-    console.log("Numeros No Primos: " + numerosNoPrimos);
-  }*/
+  
 }
 //-----------------------------------------
 
