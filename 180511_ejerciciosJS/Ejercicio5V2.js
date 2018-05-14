@@ -9,6 +9,12 @@ Crear las siguientes funciones:
 */
 
 //let c = 100; // numeroHasta
+let numerosPrimos = [];
+let numerosNoPrimos = [];
+let numerosPares = [];
+let numerosImpares = [];
+
+
 
 //Función números pares
 function par(numero) {
@@ -37,20 +43,75 @@ function primo(numero) {
 
 //--------------------------------------
 
-console.log(integradora(100));
 
-function integradora(c, callback, callback) {
-  let numerosPrimos = [];
-  let numerosNoPrimos = [];
-  let numerosPares = [];
-  let numerosImpares = [];
+/* 1: par
+   2: impar
+   3: primos
+   4: no primos
+*/
+//llamo funcion integradora 
+integradora(1, par(20));
+integradora(2, par(20));
+integradora(3, primo(20));
+integradora(4, primo(20));
+
+
+
+
+//-----------------------------------------
+//--------Función integradora----------------------------------------------------------------------------------------
+function integradora(c,funcion) {
+ 
   let j = 2; //numeroDesde  aplica a numeros primos y no primos
   let k = 1; //numeroDesde  aplica a numeros primos y no primos
+  let d=20;
 
+  switch(c){
+  case 1: // pares
+  //c = 100; // numeroHasta
+  //j = 2; //numeroDesde -> aplica a numeros pares e impares
+  // recorro los numeros para ver si son pares o impares
+  for (; k <= d; k++) {
+    if (par(k)) {
+      numerosPares.push(k);
+    } else {
+      //numerosImpares.push(k);
+    }
+  }
+
+  console.log("Numeros Pares: " + numerosPares);
+  break;
+  case 2: // impares
+  //c = 100; // numeroHasta
+  //j = 2; //numeroDesde -> aplica a numeros pares e impares
+  // recorro los numeros para ver si son pares o impares
+  for (; k <= d; k++) {
+    if (par(k)) {
+      //numerosPares.push(k);
+    } else {
+      numerosImpares.push(k);
+    }
+  }
+
+  console.log("Numeros Impares: " + numerosImpares);
+  break;
+  case 3: // primos
   // recorro los numeros para ver si son primos o no primos
-  for (; j <= c; j++) {
+  for (; j <= d; j++) {
     if (primo(j)) {
       numerosPrimos.push(j);
+    } else {
+      //numerosNoPrimos.push(j);
+    }
+ }
+
+  console.log("Numeros Primos: " + numerosPrimos);
+  break;
+  case 4:  //no primos
+  // recorro los numeros para ver si son primos o no primos
+  for (; j <= d; j++) {
+    if (primo(j)) {
+      //numerosPrimos.push(j);
     } else {
       numerosNoPrimos.push(j);
     }
@@ -58,21 +119,16 @@ function integradora(c, callback, callback) {
     
   }
 
-  console.log("Numeros Primos: " + numerosPrimos);
+
+
   console.log("Numeros No Primos: " + numerosNoPrimos);
-
-  //c = 100; // numeroHasta
-  //j = 2; //numeroDesde -> aplica a numeros pares e impares
-  // recorro los numeros para ver si son pares o impares
-  for (; k <= c; k++) {
-    if (par(k)) {
-      numerosPares.push(k);
-    } else {
-      numerosImpares.push(k);
-    }
+  break;
   }
-
-  console.log("Numeros Pares: " + numerosPares);
-  console.log("Numeros Impares: " + numerosImpares);
 }
+
 //-----------------------------------------
+
+
+
+
+
