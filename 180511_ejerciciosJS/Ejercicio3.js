@@ -36,13 +36,13 @@ return array.splice(0,n);
 
 
 }*/
-
-primer = function(array, n) {
+  
+function primer(array, n) {      // primer=function(array,n)
   if (array == null) return void 0;
   if (n == null) return array[0]; //primer elemento
   if (n < 0) return [];
-  return array.slice(0, n);  //slice se cargan dos datos: el nro del primer elemento y el numero del ultimo elemento que se desea del array
-};
+  return array.slice(0, n); //slice se cargan dos datos: el nro del primer elemento y el numero del ultimo elemento que se desea del array
+}
 
 console.log(primer([7, 9, 0, -2]));
 console.log(primer([], 3));

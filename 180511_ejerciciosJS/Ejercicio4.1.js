@@ -10,7 +10,7 @@ Salida :
 */
 function sumaArray(array1, array2) 
 {
-  const resultado = []; //declaro e inicializo array
+  let resultado = []; //declaro e inicializo array
   let control = 0;
   let i=0;
 
