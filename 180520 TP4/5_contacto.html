@@ -51,12 +51,20 @@
                     <input type="text" id="apellido" />
                 </p>
                 <p>
-                    <label for="">Sexo</label>
-                    <br />
+                    <label for="">Sexo:</label>
+                    <br>
                     <select name="" id="sexo">
-                        <option value="femenino">Femenito</option>
+                        <option value="femenino">Femenino</option>
                         <option value="masculio">Masculino</option>
                     </select>
+                </p>
+                <p>
+                    <label for="">Email:</label>
+                    <input type="text" id="email" />
+                </p>
+                <p>
+                    <label for="">Teléfono:</label>
+                    <input type="text" id="telefono" />
                 </p>
             </form>
 
@@ -71,8 +79,10 @@
                     let nombre = document.getElementById("nombre").value;
                     let apellido = document.getElementById("apellido").value;
                     let sexo = document.getElementById("sexo").value;
+                    let email = document.getElementById("email").value;
+                    let telefono = document.getElementById("telefono").value;
 
-                    let request = { nombre: nombre, apellido: apellido, sexo: sexo };
+                    let request = { nombre: nombre, apellido: apellido, sexo: sexo,email:email,telefono:telefono };
 
                     document.getElementById("resultado").innerHTML = JSON.stringify(request);
 
