@@ -1,1 +1,4 @@
-ejemploexpress\node_modules\
+# Código gitignore para evitar procesar los directorios de las dependencias
+
+ejemploexpress/node_modules
+180615 TP5/node_modules
