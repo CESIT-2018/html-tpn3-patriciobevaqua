@@ -1,4 +1,12 @@
 # Código gitignore para evitar procesar los directorios de las dependencias
 
+formulario/
+ecommerce/
+
 180608_ejemploexpress/node_modules
 180615_TP5/node_modules
+
+# Versiones anteriores de Código de html-css-js 
+180615_TP5/public/z_versionesAnteriores
+180615_TP5/public/contacto/css/contactoV0.css
+180615_TP5/public/contacto/js/validacionV0.js
