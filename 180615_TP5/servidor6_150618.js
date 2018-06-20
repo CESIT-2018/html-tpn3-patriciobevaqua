@@ -6,7 +6,10 @@ const app = express(); //crea una instancia de express que se asigna a la variab
 app.set("view engine", "ejs");
 
 app.get("/productos", (req, res,next) => {
-const productosArr=[{nombre:"Publicaciones",descripcion:"Son publicaciones técnicas de editorial Errepar"},{nombre:"Seguros",descripcion:"Abarcamos ramas de seguros personales"}];
+const productosArr=[{nombre:"Publicaciones",descripcion:"Son publicaciones técnicas de editorial Errepar"},{nombre:"Seguros",descripcion:"Abarcamos ramas de seguros personales"},
+{nombre:"Publicaciones02",descripcion:"parturient phasellus nullam pellentesque nisl"},{nombre:"Seguros02",descripcion:"Lorem ipsum dolor sit amet consectetur adipiscing"},
+{nombre:"Publicaciones03",descripcion:"varius venenatis hac. Sapien magnis blandit luctus tortor"},{nombre:"Seguros03",descripcion:"elit tincidunt imperdiet, conubia neque habitasse"},
+{nombre:"Publicaciones04",descripcion:"ut conubia curabitur, pellentesque vel convallis eros natoque"},{nombre:"Seguros04",descripcion:"velit magna eros torquent vitae pulvinar"}];
 
     res.render(`productos`,{productos:productosArr});    
 

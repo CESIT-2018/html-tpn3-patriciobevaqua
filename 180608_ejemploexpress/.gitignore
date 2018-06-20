@@ -1,0 +1,3 @@
+# Código gitignore para evitar procesar los directorios de las dependencias
+
+180608_ejemploexpress/node_modules
