@@ -1,0 +1,74 @@
+.formularios{box-shadow:0 0 6px #fff;float:left;height:auto;margin:10px 0;padding:1% 0;width:99%;background:#fff;transition:background 0.2s ease;border:1px solid #eee;}
+.formularios:hover{box-shadow:0 0 6px #ccc;background:#f5f5f5;}
+.formularios h3{width:100%;height:auto;float:left;margin:10px 0 20px 0;padding:0;text-align:center;font-size:18px;transition:background 0.5s ease 0s, color 0.8s ease 0s;text-transform:uppercase;letter-spacing:1.2px;text-shadow:0px 0px 3px #ccc;}
+.formularios:hover h3{background:#009bdd;color:#fff;}
+.formularios ul{width:100%;height:auto;float:left;margin:0;padding:0;list-style-type:none;}
+.formularios ul li.titulo{border-bottom:1px dashed #ccc;border-top:1px dashed #ccc;float:left;height:auto;margin:0;padding:0;width:100%;}
+.formularios ul li.titulo p{width:100%;height:auto;float:left;margin:0;padding:7px 0 0 0;text-align:center;color:#009bdd;font-size:0.9em;}
+.formularios ul li.formularioCondiciones{width:96%;height:auto;float:left;margin:0;padding:2%;background:#009bdd;}
+.formularios ul li.formularioCatpcha{background:#009bdd;float:left;height:auto;margin:0;padding:2%;width:96%;}
+.formularios ul li.parrafo{width:96%;height:auto;float:left;margin:0;padding:2%;}
+.formularios ul li.parrafo p{width:100%;height:auto;float:left;margin:0;padding:0;font-size:0.9em;}
+.formularios ul li{width:46%;min-height:35px;height:auto;float:left;margin:0;padding:1% 2%;transition:background 0.5s ease;}
+.formularios ul li:hover{background:#eee;}
+.formularios ul li label{color:#666;float:left;font-family:inherit;font-size:0.8em;height:auto;letter-spacing:-0.2px;margin:0 0 2px 0;padding:1%;text-align:right;text-transform:uppercase;width:38%;}
+.formularios ul li input,.formularios ul li select,.formularios ul li textarea{background:none repeat scroll 0 0 #fff;border:1px solid #ddd;color:#eeeeee;float:left;font-family:inherit;font-size:0.9em;height:auto;margin:0;padding:1%;transition:background 0.5s ease 0s;width:53%;}
+.formularios ul li input:hover,.formularios ul li select:hover,.formularios ul li textarea:hover{background:#009bdd;color:#fff;}
+.formularios ul li div.opciones{width:auto;float:left;margin:0;padding:5px;}
+.formularios ul li div.opciones div.opcion{display:inline-block;}
+.formularios ul li div.opciones span,
+.formularios ul li div.opciones div span{width:auto;float:left;margin:-5px 10px 0 3px;padding:0;}
+.formularios ul li div.opciones input,
+.formularios ul li div.opciones div input{width:auto;float:left;margin:0;padding:0;}
+.formularios ul li p.condiciones{background:none repeat scroll 0 0 #fff;color:#999;float:left;font-family:inherit;font-size:0.6em;height:auto;margin:0;padding:1%;width:98%;}
+.formularios ul li span.acepto{width:100%;height:auto;float:left;margin:0;padding:15px 0 0 0;}
+.formularios ul li span.acepto input{width:auto;height:auto;float:left;margin:0;padding:0;}
+.formularios ul li span.acepto label{color:#222;float:left;font-size:0.7em;height:auto;margin:0 0 0 10px;padding:0;width:auto;}
+.formularios ul li span.captcha{float:left;width:60%;font-size:10px;margin:0px 0px 0 0;padding:0 10px 8px 5px;border:0;color:#eeeeee;}
+.formularios ul li span.captcha a{background:url("../img/recargar.png") no-repeat scroll left top rgba(0, 0, 0, 0);color:#333;float:left;font-size:1.5em;height:25px;margin:0;padding:3px 0 0 31px;}
+.formularios ul li span.captcha a:hover{background:url("../img/recargar_hover.png") no-repeat scroll left top rgba(0, 0, 0, 0);text-decoration:none;color:#172a5d;}
+.formularios ul li img.img_captcha{border:1px solid #eee;display:block;float:left;margin:0 2% 0 0;width:25%;}
+.formularios ul li.formularioEnviar{width:96%;height:auto;float:left;margin:0;padding:2%;}
+.formularios ul li.formularioEnviar:hover{background:none;}
+.formularios ul li.formularioEnviar input.boton{color:#999;margin:0 0 0 40%;border:1px solid #ddd;width:auto;padding:3px 10px;cursor:pointer;background:#eee;box-shadow:0 1px 3px #ccc;transition:background 0.5s ease;width:15%;}
+.formularios ul li.formularioEnviar input.boton:hover{color:#fff;text-transform:uppercase;background:#009bdd;border:1px solid #fff;box-shadow:0 1px 3px #999;}
+.formularios ul li{width:96%;padding:5px 2%;transition:0.3s ease 0s;margin:3px 0;}
+.formularios ul li:hover{background:#eee;}
+.formularios ul li.parrafo{text-align:center;}
+.formularios ul li.Largo{width:96%;padding:5px 2%;}
+.formularios ul li.Largo > p,
+.formularios ul li.Largo > label,
+.formularios ul li.Largo > div.opciones,.formularios ul li.Largo > div.opciones > div.opcion,
+.formularios ul li.Largo > input,
+.formularios ul li.Largo > select,
+.formularios ul li.Largo > textarea{width:98%;padding:10px 1%;}
+.formularios ul li.Largo > label{padding:5px 1%;}
+.formularios ul li.Largo > div.opciones > div.opcion{padding:5px 1%;}
+.formularios ul li.Largo > textarea{padding:1%;min-height:75px;}
+.formularios ul li.Medio{width:96%;padding:5px 2%;}
+.formularios ul li.Medio > p{width:98%;padding:10px 1%;}
+.formularios ul li.Medio > label,
+.formularios ul li.Medio > div.opciones,.formularios ul li.Medio > div.opciones > div.opcion,
+.formularios ul li.Medio > input,
+.formularios ul li.Medio > textarea,
+.formularios ul li.Medio > select{width:47%;padding:10px 1%;}
+.formularios ul li.Medio > input{padding:1%;}
+.formularios ul li.Medio > div.opciones > div.opcion{padding:5px 1%;}
+.formularios ul li.Corto{width:46%;padding:5px 2%;min-height:80px;}
+.formularios ul li.Corto > p,
+.formularios ul li.Corto > label,
+.formularios ul li.Corto > div.opciones, .formularios ul li.Corto > div.opciones > div.opcion,
+.formularios ul li.Corto > input,
+.formularios ul li.Corto > textarea,
+.formularios ul li.Corto > select{width:98%;padding:10px 1%;}
+.formularios ul li.Corto > label{}
+.formularios ul li.Corto > div.opciones > div.opcion{padding:5px 1%;}
+.formularios ul li.Numero{width:46%;padding:5px 27% 5px 27%;}
+.formularios ul li.Numero > label{width:80%;}
+.formularios ul li.Numero > input{width:5%;text-align:center;}
+.formularios ul li.Numero > input[readonly='readonly'],
+.formularios ul li.Numero > input:not([type=text]),
+.formularios ul li.Numero > textarea,
+.formularios ul li.Numero > select{width:80%;}
+.formularios ul li[style^='width:100%;']{margin:3px 0;padding:15px 2%;box-sizing:border-box;}
+.formularios ul li[style^='width:90%;']{margin:3px 0;padding:5px 5%;}
