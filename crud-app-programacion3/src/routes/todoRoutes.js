@@ -124,7 +124,7 @@ module.exports = app => {
             if (!todo) {
                 return res.status(404).send({ message: 'Not Found Error' });
             } else {
-                return res.status(204); // 204 do not use content
+                return res.status(204).send({ message: 'Borrado' }); // 204 do not use content
             }
         } catch (err) {
             return res.status(500).send({ message: `Todo with id '${id}' is not found.` });
