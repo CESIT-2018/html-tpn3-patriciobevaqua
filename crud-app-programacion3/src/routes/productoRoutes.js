@@ -55,9 +55,9 @@ module.exports = app => {
         });
 
         try {
-            let newTodo = await producto.save();
+            let newProducto = await producto.save();
 
-            res.status(201).send(newTodo);
+            res.status(201).send(newProducto);
 
         } catch (err) {
 
@@ -74,12 +74,12 @@ module.exports = app => {
 
         const id = req.params.id;
 
-        const todoData = req.body || {};
-        delete todoData.createdAt;
-        todoData.updatedAt = new Date();
+        const productoData = req.body || {};
+        delete productoData.createdAt;
+        productoData.updatedAt = new Date();
 
         try {
-            let producto = await Producto.findOneAndUpdate({ _id: id }, todoData, { new: true });
+            let producto = await Producto.findOneAndUpdate({ _id: id }, productoData, { new: true });
 
             if (!producto) {
                 res.status(404).send({ message: `Error when update record with id ${id}.\n\n${e}` })
