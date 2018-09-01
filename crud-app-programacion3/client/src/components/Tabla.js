@@ -61,9 +61,7 @@ render() {          //método de js que tiene return y devueve html
            <tbody>
 
                {this.getFilas()}
-               {this.getFilas()}
-               {this.getFilas()}
-
+               
                        <tr>
                            <td></td>
                            <td></td>
