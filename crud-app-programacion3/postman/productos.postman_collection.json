@@ -61,7 +61,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"nombre\": \"Nuevo producto\",\n\t\"descripcion\": \"Este es mi primer producto\",\n\t\"precio\": \"10\",\n\t\"stock\": \"100\",\n}"
+					"raw": "{\n\t\"nombre\": \"Nuevo producto\",\n\t\"descripcion\": \"Este es mi primer producto\",\n\t\"stock\": \"10\",\n\t\"precio\": \"100\"\n}"
 				},
 				"url": {
 					"raw": "localhost:5000/api/productos",
