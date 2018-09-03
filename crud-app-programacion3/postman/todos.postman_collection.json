@@ -90,8 +90,8 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"name\": \"Actualizando todo\"\n}"
-				},
+					"raw": "{\n\t\"name\": \"Actualizando todo\",\n\t\"description\": \"Actualiza PUT\"\n}"
+				},	
 				"url": {
 					"raw": "localhost:5000/api/todos/5b65245f98beb2237c9cfceb",
 					"host": [

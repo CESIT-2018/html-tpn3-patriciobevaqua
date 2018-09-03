@@ -9,20 +9,41 @@ const productosArr=[{nombre:"Publicaciones",descripcion:"Son publicaciones técn
 class Tabla extends Component {
 
 
-/**
- * getFilas(){
+
+
+    getFilas(){
+       
+        productosArr.map(p=>{
+            return(<tr><td>{p.nombre}</td><td><b>{p.descripcion }</b></td></tr>);
+       
+        });
+    }
+
+/*
+    getFilas(){
+          let f;
+        for(let i=0; i<productosArr.length;i++) {    
+             f+=<tr><td>{productosArr[i].nombre}</td><td><b>{productosArr[i].descripcion }</b></td></tr>;
+            }
+        return(f);
+    }
+*/
+
+/*
+ getFilas(){
   
-const f;
+let f='';
     
-for(const p in productosArr) {
+for(let p in productosArr) {
   
-    f+=<tr><td>{p.nombre}</td><td><b>{p.descripcion }</b></td></tr>;
+f+=(<tr><td>{productosArr[p].nombre}</td><td><b>{productosArr[p].descripcion }</b></td></tr>);
     
     }
     return(f);
 
 }
- */
+*/
+/**
 
 getFilas(){
     
@@ -42,6 +63,7 @@ getFilas(){
     );
     }
 }
+ */
 
 render() {          //método de js que tiene return y devueve html
     return (
