@@ -7,14 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
 
 
     <!-- para formulario de contacto 1 -->
     <link rel="stylesheet" type="text/css" href="./contacto/css/contacto.css" />
-    <link rel="stylesheet" href="./contacto/css/formularios.css" />
     <script type="text/javascript" src="./contacto/js/validacion.js"></script>
-    <script type="text/javascript" src="./contacto/js/formularios.js"></script>
 
     <title> Contacto</title>
 </head>
@@ -47,7 +46,7 @@
 
             <!--formulario de contacto 1-->
             <div id="contacto">
-                <h3>Formulario de Contacto:</h3>
+                <h3>Formulario de Contacto 1:</h3>
                 <form name='form_contacto' id='form_contacto' action='' method='post' onsubmit="javascript:return(validarContacto(this));return false;">
                     <ul class="contacto">
 
@@ -56,7 +55,7 @@
                             <input type="text" name="nombre" id="nombre" size="40" placeholder="Nombre" onclick="this.select()" required />
 
                             <label for='sexo'>Sexo:</label>
-                            <!--<input type="text" name="sexo" id="sexo" size="40" placeholder="Sexo" onclick="this.select()" required /> -->
+                            <input type="text" name="sexo" id="sexo" size="40" placeholder="Sexo" onclick="this.select()" required />
                             <select id='sexo' name='sexo' required>
                                 <option value='' selected='selected' disabled>-Seleccione-</option>
                                 <option value='1'>Masculino</option>
@@ -124,8 +123,104 @@
             <!--fin formulario de contacto 1-->
 
 
+            <!--formulario de contacto 2-->
             <br/>
+            <h3>Formulario de Contacto 2:</h3>
+            <br/>
+            <form id="formPersonal">
+                <p>
+                    <label for="">Nombre:</label>
+                    <input type="text" id="nombre" />
+                </p>
+                <p>
+                    <label for="">Apellido:</label>
+                    <input type="text" id="apellido" />
+                </p>
+                <p>
+                    <label for="">Sexo:</label>
+                    <br>
+                    <select name="" id="sexo">
+                        <option value="femenino">Femenino</option>
+                        <option value="masculio">Masculino</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="">Email:</label>
+                    <input type="text" id="email" />
+                </p>
+                <p>
+                    <label for="">Teléfono:</label>
+                    <input type="text" id="telefono" />
+                </p>
+            </form>
 
+            <button onclick="enviarDatos()">Enviar</button>
+            </br>
+            </br>
+            <h3 id="resultado"></h3>
+
+            <script>
+
+                function enviarDatos() {
+
+                    let nombre = document.getElementById("nombre").value;
+                    let apellido = document.getElementById("apellido").value;
+                    let sexo = document.getElementById("sexo").value;
+                    let email = document.getElementById("email").value;
+                    let telefono = document.getElementById("telefono").value;
+
+                    let request = { nombre: nombre, apellido: apellido, sexo: sexo, email: email, telefono: telefono };
+
+                    document.getElementById("resultado").innerHTML = JSON.stringify(request);
+
+                    setTimeout(function () {
+
+                        document.getElementById("resultado").innerHTML = JSON.stringify(request) + "... Enviada exitosamente";
+                    }, 3000);
+
+                }
+            </script>
+            <!--fin formulario de contacto 2-->
+            <br/>
+            <!--Inicio formulario de contacto 3-->
+            <h3>Formulario de Contacto 3:</h3>
+            <form method="post" id="formulario-contacto" role="form" autocomplete="off">
+                <div class="form-group has-success">
+                    <input class="form-control hidden" type="text" name="pack" value="contacto" readonly placeholder="Nombre" />
+                    <br/>
+                    <input class="form-control" type="text" name="nombre" placeholder="Nombre" />
+                    <span id="error" class="help-block"></span>
+                    <br/>
+                    <div class="checkbox">
+                        <label for="">Sexo:</label>
+                        <label>
+                            <input type="checkbox" name="sexo" value="sexo" /> Femenino</label>
+                        <label>
+                            <input type="checkbox" name="sexo" value="sexo" /> Masculino</label>
+                    </div>
+
+                </div>
+                <div class="form-group has-error">
+                    <input class="form-control" type="email" name="email" placeholder="Correo electrónico" />
+                    <span id="error" class="help-block"></span>
+                </div>
+                <div class="form-group has-error">
+                    <input class="form-control" type="tel" name="telefono" placeholder="telefono" />
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" rows="14" name="mensaje" placeholder="Mensaje"></textarea>
+                    <span id="error" class="help-block"></span>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="aceptolopd" value="Acepto Lopd" required /> He leído y acepto la política de protección de datos.</label>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary btn-lg" type="submit">Enviar </button>
+                </div>
+            </form>
+
+            <!--fin formulario de contacto 3-->
         </div>
 
     </div>
@@ -141,11 +236,12 @@
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery.validate.min.js"></script>
+    <script src="https://code.jquery.com/jquery.validate.min.js" ></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
         crossorigin="anonymous"></script>
-    <script src="./bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
 
 </body>
 
