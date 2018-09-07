@@ -110,11 +110,11 @@ class Tabla extends Component {
         <h1>Nuestros Productos:</h1>
         <br />
 
-        <table>
-          <thead>
+        <table className="table">
+          <thead className="thead-light">
             <tr>
-              <th>Producto</th>
-              <th>Descripción</th>
+              <th scope="col">Producto</th>
+              <th scope="col">Descripción</th>
             </tr>
           </thead>
           <tbody>
