@@ -15,12 +15,18 @@ class App extends Component {
     alert("esto es una función hash con callback en componente App");
   };*/
 
+  /* olvidarlo axios
+  llamarAPI = async ()=>{
+  const res= await axios.get("http://localhost:5000/api/productos");
+  console.info('Respuesta',res);
+  }
+*/
+
   miMetodo = () => {
-    //this.setState({miSubtitulo: "nuevo"+ new Date()});
-    //this.setState({tieneSubtitulo: !this.state.tieneSubtitulo});
-    const res= axios.get("http://localhost:5000/api/productos");
-    console.info('Respuesta',res);
-  };
+    this.setState({miSubtitulo: "nuevo"+ new Date()});
+    this.setState({tieneSubtitulo: !this.state.tieneSubtitulo});
+    //this.llamarAPI();  olvidarlo axios
+};
 
 renderSubtitulo(){
   if (this.state.tieneSubtitulo){
