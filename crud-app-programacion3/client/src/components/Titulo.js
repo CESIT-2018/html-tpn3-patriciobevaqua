@@ -6,7 +6,7 @@ class Titulo extends Component {
     return (
       <div>
         <h1>Título en clase título</h1>
-        <h1>{this.props.cadenaT} </h1>   
+        <h1>{this.props.nombreT} </h1>   
       </div>
     ); //siempre devuelve un elemento (no mas de uno)
   }

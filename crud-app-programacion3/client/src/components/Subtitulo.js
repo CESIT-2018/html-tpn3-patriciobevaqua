@@ -21,11 +21,14 @@ class Subtitulo extends Component {
     //método de js que tiene return y devueve html
     return (
       <div>
-        {this.getHtml()}
-        <h1>{this.props.cadena} </h1>   
+          {this.props.nombre}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
       </div>
     ); //siempre devuelve un elemento (no mas de uno)
   }
 }
 
 export default Subtitulo;
+
+//{this.getHtml()}
+//<h1>{this.props.cadena} </h1> 
