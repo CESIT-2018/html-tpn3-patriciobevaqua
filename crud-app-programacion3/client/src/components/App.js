@@ -1,10 +1,13 @@
 import React, { Component } from "react";
 //import axios from 'axios';  // permite hacer request a api rest
 
+//import { view, StyleSheet} from "react-native";
+
 import Titulo from "./Titulo";
 import Subtitulo from "./Subtitulo";
 import Tabla from "./Tabla";
 import Boton from "./Boton";
+//import Imagen from "./Imagen";
 class App extends Component {
   state = {
     miSubtitulo: "Este es mi subtitulo ubicado en el state de app.",
@@ -41,6 +44,7 @@ class App extends Component {
         <h1>First Application - Nuevo Título</h1>
         <Titulo nombreT="2, probando propiedades en Titulo" />
         {this.renderSubtitulo()}
+        
         <Tabla />
         <Boton nombre="Aceptar" nombre2="boton azul" hacerClick={this.miMetodo} />
         <br/>
@@ -54,3 +58,4 @@ export default App;
 
 //<Subtitulo cadena="1, probando propiedades en Subtitulo" nombre={this.state.miSubtitulo} />
 //<Subtitulo cadena={this.renderSubtitulo()}/>
+//<Imagen   source={require('../imgs/reactImage.png')}/>
