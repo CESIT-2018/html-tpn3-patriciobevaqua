@@ -27,11 +27,13 @@ class MainContainer extends Component {
                         <Route exact path="/todos/:id/show" component={ShowTodo}/>
                         <Route exact path="/todos/:id/edit" component={EditTodo}/>
 
-                   
                         <Route exact path="/productos" component={ListProducto}/>
                         <Route exact path="/productos/new" component={NewProducto}/>
                         <Route exact path="/productos/:id/show" component={ShowProducto}/>
                         <Route exact path="/productos/:id/edit" component={EditProducto}/>
+
+ 
+ 
                     </main>
                 </div>
             </div>

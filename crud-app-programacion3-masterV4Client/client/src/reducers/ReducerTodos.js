@@ -1,48 +1,88 @@
-import { FETCH_TODOS, NEW_TODO, SAVE_TODO, FETCH_TODOS_BY_ID, UPDATE_TODO } from '../actions/types';
+import {
+  todosTypes
+} from '../actions/types';
 
 const TODO_INITIAL_STATE = {};
 
 const INITIAL_STATE = {
-  list: [],
+  listTodos: [],
   todo: TODO_INITIAL_STATE,
+  loading: false,
   errors: {}
 };
 
 export default function (state = INITIAL_STATE, action) {
   switch (action.type) {
-    case FETCH_TODOS:
+    case todosTypes.FETCH_TODOS_FULFILLED:
       return {
         ...state,
-        list: action.payload
+        listTodos: action.payload.data,
+        loading: false
+      };
+    
+    case todosTypes.FETCH_TODOS_PENDING:
+      return {
+        ...state,
+        loading: true
       };
 
-    case NEW_TODO : {
+    case todosTypes.FETCH_TODOS_REJECTED:
+      return {
+        ...state,
+        loading: false
+      };
+
+    case todosTypes.NEW_TODO : {
       return {
         ...state
       }
     }
 
-    case SAVE_TODO : {
+    case todosTypes.SAVE_TODO : {
       return {
         ...state,
-        list: [...state.list, action.payload.data],
+        listTodos: [...state.listTodos, action.payload.data],
         errors: {}
       }
     }
 
-    case FETCH_TODOS_BY_ID: {
+    case todosTypes.FETCH_TODOS_BY_ID_FULFILLED: {
       return {
         ...state,
-        todo: action.payload.data
+        todo: action.payload.data,
+        loading: false
+      }
+    }
+    
+    case todosTypes.FETCH_TODOS_BY_ID_PENDING: {
+      return {
+        ...state,
+        todo: {},
+        loading: true
       }
     }
 
-    case UPDATE_TODO: {
+    case todosTypes.FETCH_TODOS_BY_ID_REJECTED: {
+      return {
+        ...state,
+        loading: false
+      }
+    }
+
+    case todosTypes.UPDATE_TODO: {
       const todo = action.payload.data;
       return {
         ...state,
         todo: TODO_INITIAL_STATE,
-        list: state.list.map(item => item._id === todo._id ? todo : item)
+        listTodos: state.listTodos.map(item => item._id === todo._id ? todo : item)
+      }
+    }
+
+    case todosTypes.DELETE_TODO: {
+      const id = action.payload.data._id;
+      return {
+        ...state,
+        listTodos: state.listTodos.filter(item => item._id !== id)
       }
     }
 

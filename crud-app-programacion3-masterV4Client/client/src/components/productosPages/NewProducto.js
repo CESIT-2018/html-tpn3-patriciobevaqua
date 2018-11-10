@@ -29,7 +29,7 @@ class NewProducto extends Component {
     render() {
         return (
             <div>
-                <h2>New PRODUCTO</h2>
+                <h2>Nuevo Producto</h2>
 
                 {this.state.redirect
                     ? <Redirect to="/productos"/>
@@ -42,7 +42,7 @@ class NewProducto extends Component {
 }
 
 function mapStateToProps(state) {
-    return {producto: state.productos.producto, errors: state.productos.errors}
+    return {producto: state.productoDS.producto, errors: state.productoDS.errors}
 }
 
 export default connect(mapStateToProps, {newProducto,saveProducto})(NewProducto);

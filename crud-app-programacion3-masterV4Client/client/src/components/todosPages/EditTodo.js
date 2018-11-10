@@ -37,6 +37,7 @@ class EditTodo extends Component {
                         ? <Redirect to="/todos" />
                         : <TodoForm
                             todo={this.props.todo}
+                            loading={this.props.loading}
                             onSubmit={this.submit}/>
                     }
                 </div>
@@ -46,7 +47,11 @@ class EditTodo extends Component {
 }
 
 function mapStateToProps(state) {
-    return {todo: state.todos.todo, errors: state.todos.errors};
+    return {
+        todo: state.todoDS.todo,  
+        loading: state.todoDS.loading,
+        errors: state.todoDS.errors
+    };
 }
 
 export default connect(mapStateToProps, { fetchTodoById, updateTodo })(EditTodo);

@@ -1,30 +1,57 @@
 import axios from 'axios';
-import { FETCH_PRODUCTOS, NEW_PRODUCTO, SAVE_PRODUCTO, FETCH_PRODUCTOS_BY_ID, UPDATE_PRODUCTO } from './types';
+import {
+  productosTypes
+} from './types';
 
 export const fetchProductos = () => async dispatch => {
-  const res = await axios.get('/api/productos');
+  
+  dispatch({ type: productosTypes.FETCH_PRODUCTOS_PENDING });
+  
+  try {
+    var res = await axios.get('/api/productos');
+    dispatch({ type: productosTypes.FETCH_PRODUCTOS_FULFILLED, payload: res });
+  } catch (error) {
+    dispatch({ type: productosTypes.FETCH_PRODUCTOS_REJECTED, payload: error });
+  }
 
-  dispatch({ type: FETCH_PRODUCTOS  , payload: res.data });
 };
 
 export const newProducto = () => async dispatch => {
-  dispatch({ type: NEW_PRODUCTO  });
+  dispatch({ type: productosTypes.NEW_PRODUCTO  });
 };
 
 export const saveProducto = (producto) => async dispatch => {
   var res = await axios.post('/api/productos', producto);
-  dispatch({ type: SAVE_PRODUCTO, payload: res });
+  dispatch({ type: productosTypes.SAVE_PRODUCTO, payload: res });
 };
 
 export const fetchProductoById = (id) => async dispatch => {
-  var res = await axios.get('/api/productos/' + id);
-  dispatch({ type: FETCH_PRODUCTOS_BY_ID, payload: res });
+  
+  dispatch({ type: productosTypes.FETCH_PRODUCTOS_BY_ID_PENDING });
+  
+  try {
+    const res = await axios.get('/api/productos/' + id);
+    dispatch({ type: productosTypes.FETCH_PRODUCTOS_BY_ID_FULFILLED, payload: res });
+  } catch (error) {
+    dispatch({ type: productosTypes.FETCH_PRODUCTOS_BY_ID_REJECTED });
+  }
+
 };
 
 export const updateProducto = (producto) => async dispatch => {
   var res = await axios.put(`/api/productos/${producto._id}`, producto);
   return dispatch({
-    type: UPDATE_PRODUCTO,
+    type: productosTypes.UPDATE_PRODUCTO,
+    payload: res
+  })
+}
+
+export const deleteProducto = (id) => async dispatch => {
+
+  var res = await axios.delete(`/api/productos/${id}`);
+
+  return dispatch({
+    type: productosTypes.DELETE_PRODUCTO,
     payload: res
   })
 }

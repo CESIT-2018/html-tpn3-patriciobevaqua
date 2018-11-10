@@ -1,49 +1,88 @@
-import { FETCH_PRODUCTOS, NEW_PRODUCTO, SAVE_PRODUCTO, FETCH_PRODUCTOS_BY_ID, UPDATE_PRODUCTO } from '../actions/types';
+import {
+  productosTypes
+} from '../actions/types';
 
 const PRODUCTO_INITIAL_STATE = {};
 
 const INITIAL_STATE = {
-  list: [],
+  listProductos: [],
   producto: PRODUCTO_INITIAL_STATE,
+  loading: false,
   errors: {}
 };
 
 export default function (state = INITIAL_STATE, action) {
   switch (action.type) {
-    case FETCH_PRODUCTOS:
+    case productosTypes.FETCH_PRODUCTOS_FULFILLED:
       return {
         ...state,
-        list: action.payload
+        listProductos: action.payload.data,
+        loading: false
+      };
+    
+    case productosTypes.FETCH_PRODUCTOS_PENDING:
+      return {
+        ...state,
+        loading: true
       };
 
-    case NEW_PRODUCTO : {
+    case productosTypes.FETCH_PRODUCTOS_REJECTED:
       return {
         ...state,
-        producto: PRODUCTO_INITIAL_STATE
+        loading: false
+      };
+
+    case productosTypes.NEW_PRODUCTO : {
+      return {
+        ...state
       }
     }
 
-    case SAVE_PRODUCTO : {
+    case productosTypes.SAVE_PRODUCTO : {
       return {
         ...state,
-        list: [...state.list, action.payload.data],
+        listProductos: [...state.listProductos, action.payload.data],
         errors: {}
       }
     }
 
-    case FETCH_PRODUCTOS_BY_ID: {
+    case productosTypes.FETCH_PRODUCTOS_BY_ID_FULFILLED: {
       return {
         ...state,
-        producto: action.payload.data
+        producto: action.payload.data,
+        loading: false
+      }
+    }
+    
+    case productosTypes.FETCH_PRODUCTOS_BY_ID_PENDING: {
+      return {
+        ...state,
+        producto: {},
+        loading: true
       }
     }
 
-    case UPDATE_PRODUCTO: {
+    case productosTypes.FETCH_PRODUCTOS_BY_ID_REJECTED: {
+      return {
+        ...state,
+        loading: false
+      }
+    }
+
+    case productosTypes.UPDATE_PRODUCTO: {
       const producto = action.payload.data;
       return {
         ...state,
         producto: PRODUCTO_INITIAL_STATE,
-        list: state.list.map(item => item._id === producto._id ? producto : item)
+        listProductos: state.listProductos.map(item => item._id === producto._id ? producto : item)
+      }
+    }
+
+    case productosTypes.DELETE_PRODUCTO: {
+      const id = action.payload.data._id;
+      return {
+        ...state,
+        listProductos: state.listProductos.filter(item => item._id !== id)
       }
     }
 

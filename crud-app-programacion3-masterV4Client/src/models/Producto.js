@@ -7,7 +7,8 @@ const productoSchema = new Schema({
   precio: Number,
   stock: Number,
   createdAt: Date,
-  updatedAt: Date
+  updatedAt: Date,
+  total:Number
 });
 
 mongoose.model('productos', productoSchema);

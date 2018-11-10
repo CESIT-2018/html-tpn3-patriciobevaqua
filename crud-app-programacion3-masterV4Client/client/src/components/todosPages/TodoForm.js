@@ -1,17 +1,29 @@
 import React, {Component} from 'react';
 import {reduxForm, Field} from 'redux-form';
+import { Link } from 'react-router-dom';
+
 
 const validate = (values) => {
-    const errors = {name:{}};
-
-    if(!values.name) {
-        errors.name = {
-          message: 'You need to provide Name'
-        }
-      }
-
-    return errors;
-}
+    const errors = {}
+    if (!values.name) {
+      errors.name = 'Nombre es requerido'
+    } else if (values.name &&values.name.length < 5) {
+      errors.name = 'Debe contener al menos 5 caracteres'
+    }
+    // if (!values.email) {
+    //   errors.email = 'Required'
+    // } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
+    //   errors.email = 'Invalid email address'
+    // }
+    // if (!values.age) {
+    //   errors.age = 'Required'
+    // } else if (isNaN(Number(values.age))) {
+    //   errors.age = 'Must be a number'
+    // } else if (Number(values.age) < 18) {
+    //   errors.age = 'Sorry, you must be at least 18 years old'
+    // }
+    return errors
+  }
 
 class TodoForm extends Component {
 
@@ -24,29 +36,34 @@ class TodoForm extends Component {
     }
 
     renderField = ({ input, label, type, meta: { touched, error } }) => (
-        <div>
-            <label>{label}</label>
-            <input {...input} placeholder={label} type={type} style={{ marginBottom: '5px' }} />
-            <div className="red-text" style={{ marginBottom: '20px' }}>
+        
+        <div className="form-group">
+            <label forname={input.name}>{label}</label>
+            <input {...input} type={type} className="form-control" id={input.name}  placeholder={input.label} />
+            <div className="text-danger" style={{ marginBottom: '20px' }}>
                 {touched && error}
             </div>
         </div>
+    
     )
 
     render() {
 
-        const { handleSubmit } = this.props;
+        const { handleSubmit, loading } = this.props;
+
+        if(loading){
+            return (<span>loading...</span>);
+        }
 
         return (
-            <div>
-                <form onSubmit={handleSubmit}>
-                    <Field name="name" type="text" component={this.renderField} label="Name" />
-                    <Field name="description" type="text" component={this.renderField} label="Description" />
-                    <button type="submit" >{this.isUpdated ? "Update" : "Create"}</button>
-                </form>
-            </div>
+            <form onSubmit={handleSubmit}>
+                <Field name="name" type="text" component={this.renderField} label="Name" />
+                <Field name="description" type="text" component={this.renderField} label="Description" />
+                <Link className="btn btn-light mr-2" to="/todos">Cancelar</Link>
+                <button className="btn btn-primary mr-2" type="submit" >{this.isUpdated ? "Update" : "Create"}</button>
+            </form>
         )
     }
 }
 
-export default reduxForm({form: 'todo'}, validate)(TodoForm);
+export default reduxForm({form: 'todo', validate})(TodoForm);

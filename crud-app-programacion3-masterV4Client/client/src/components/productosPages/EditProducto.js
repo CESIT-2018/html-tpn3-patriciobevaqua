@@ -1,9 +1,9 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
-import {Redirect} from 'react-router';
-import {SubmissionError} from 'redux-form';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Redirect } from 'react-router';
+import { SubmissionError } from 'redux-form';
 import ProductForm from './ProductForm';
-import {fetchProductoById, updateProducto} from '../../actions/ActionsProductos';
+import { fetchProductoById, updateProducto } from '../../actions/ActionsProductos';
 
 class EditProducto extends Component {
 
@@ -12,9 +12,9 @@ class EditProducto extends Component {
     };
 
     componentDidMount() {
-        
-        const {id} = this.props.match.params;
-        
+
+        const { id } = this.props.match.params;
+
         if (id) {
             this.props.fetchProductoById(id);
         }
@@ -22,22 +22,23 @@ class EditProducto extends Component {
 
     submit = (producto) => {
         return this.props.updateProducto(producto)
-            .then(response => this.setState({ redirect:true }))
+            .then(response => this.setState({ redirect: true }))
             .catch(err => {
-            throw new SubmissionError(this.props.errors)
+                throw new SubmissionError(this.props.errors)
             })
     }
 
     render() {
         return (
             <div>
-                <h2>Edit Producto</h2>
+                <h2>Editar Producto</h2>
                 <div>
                     {this.state.redirect
                         ? <Redirect to="/productos" />
                         : <ProductForm
-                        producto={this.props.producto}
-                            onSubmit={this.submit}/>
+                            producto={this.props.producto}
+                            loading={this.props.loading}
+                            onSubmit={this.submit} />
                     }
                 </div>
             </div>
@@ -46,7 +47,11 @@ class EditProducto extends Component {
 }
 
 function mapStateToProps(state) {
-    return {producto: state.productos.producto, errors: state.productos.errors};
+    return {
+        producto: state.productoDS.producto,
+        loading: state.productoDS.loading,
+        errors: state.productoDS.errors
+    };
 }
 
 export default connect(mapStateToProps, { fetchProductoById, updateProducto })(EditProducto);

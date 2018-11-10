@@ -10,36 +10,37 @@ module.exports = app => {
         res.send(productos);
     });
 
-    // app.get("/api/todos/query", async (req, res) => {
+    app.get("/api/productos/query", async (req, res) => {
 
-    //     try {
-    //         var regExpTerm = new RegExp(req.query.term, 'i');
-    //         var regExpSearch = [{ name: { $regex: regExpTerm } }, { description: { $regex: regExpTerm } }];
-    //         const todos = await Todo.find({ '$or': regExpSearch });
+        try {
+            var regExpTerm = new RegExp(req.query.term, 'i');
+            var regExpSearch = [{ name: { $regex: regExpTerm } }, { description: { $regex: regExpTerm } }];
+            const productos = await Producto.find({ '$or': regExpSearch });
 
-    //         res.status(200).send(todos);
-    //     } catch (e) {
-    //         res.status(500).send({ message: e });
-    //     }
+            res.status(200).send(productos);
+        } catch (e) {
+            res.status(500).send({ message: e });
+        }
 
-    // });
+    });
 
-    // app.get("/api/todos/:id", async (req, res) => {
+    app.get("/api/productos/:id", async (req, res) => {
 
-    //     try {
-    //         const id = req.params.id;
-    //         const todo = await Todo.findById(id);
+        try {
+            const id = req.params.id;
+            const producto = await Producto.findById(id);
 
-    //         if (todo) {
-    //             res.send(todo);
-    //         } else {
-    //             res.status(404).send({ message: `Todo with id '${id}' is not found.` });
-    //         }
-    //     } catch (e) {
-    //         res.status(500).send({ message: `Server error.\n\n${e}` });
-    //     }
+            if (producto) {
+                res.send(producto);
+            } else {
+                res.status(404).send({ message: `Producto with id '${id}' is not found.` });
+            }
+        } catch (e) {
+            res.status(500).send({ message: `Server error.\n\n${e}` });
+        }
 
-    // });
+    });
+
 
     app.post("/api/productos", async (req, res) => {
 
@@ -70,68 +71,69 @@ module.exports = app => {
 
     });
 
-    // app.put("/api/todos/:id", async (req, res) => {
+    app.put("/api/productos/:id", async (req, res) => {
 
-    //     const id = req.params.id;
+        const id = req.params.id;
 
-    //     const todoData = req.body || {};
-    //     delete todoData.createdAt;
-    //     todoData.updatedAt = new Date();
+        const productoData = req.body || {};
+        delete productoData.createdAt;
+        productoData.updatedAt = new Date();
 
-    //     try {
-    //         let todo = await Todo.findOneAndUpdate({ _id: id }, todoData, { new: true });
+        try {
+            let producto = await Producto.findOneAndUpdate({ _id: id }, productoData, { new: true });
 
-    //         if (!todo) {
-    //             res.status(404).send({ message: `Error when update record with id ${id}.\n\n${e}` })
-    //         } else {
-    //             res.status(200).send(todo);
-    //         }
-    //     } catch (err) {
-    //         if (err.name === 'MongoError') {
-    //             res.status(409).send({ message: err.message });
-    //         }
-    //         res.status(500).send({ message: `Unknown Server Error.\n\n Unknow server error when updating todo for id='${id}'` });
-    //     }
+            if (!producto) {
+                res.status(404).send({ message: `Error when update record with id ${id}.\n\n${e}` })
+            } else {
+                res.status(200).send(producto);
+            }
+        } catch (err) {
+            if (err.name === 'MongoError') {
+                res.status(409).send({ message: err.message });
+            }
+            res.status(500).send({ message: `Unknown Server Error.\n\n Unknow server error when updating producto for id='${id}'` });
+        }
 
-    // });
+    });
 
-    // app.put("/api/todos/:id/approve/toggle", async (req, res) => {
+    app.put("/api/productos/:id/approve/toggle", async (req, res) => {
 
-    //     const id = req.params.id;
+        const id = req.params.id;
         
-    //     const todo = await Todo.findOne({ _id: id });
+        const producto = await Producto.findOne({ _id: id });
         
-    //     if (!todo) {
-    //         return res.status(404).send({ message: `Error when update record with id ${id}.\n\n${e}` })
-    //     }
+        if (!producto) {
+            return res.status(404).send({ message: `Error when update record with id ${id}.\n\n${e}` })
+        }
 
-    //     if (todo) {
-    //         todo.isDone = !todo.isDone;
-    //         todo.updatedAt = new Date();
-    //         todo.save();
-    //         res.status(200).send(todo);
-    //     } else {
-    //         res.status(404).send({ message: `Todo with id '${id}' is not found.` })
-    //     }
+        if (producto) {
+            producto.isDone = !producto.isDone;
+            producto.updatedAt = new Date();
+            producto.save();
+            res.status(200).send(producto);
+        } else {
+            res.status(404).send({ message: `Producto with id '${id}' is not found.` })
+        }
             
-    // });
+    });
 
-    // app.delete("/api/todos/:id", async (req, res) => {
+    app.delete("/api/productos/:id", async (req, res) => {
 
-    //     const id = req.params.id;
+        const id = req.params.id;
 
-    //     try {
-    //         let todo = await Todo.findOneAndRemove({ _id: id });
+        try {
+            let producto = await Producto.findOneAndRemove({ _id: id });
 
-    //         if (!todo) {
-    //             return res.status(404).send({ message: 'Not Found Error' });
-    //         } else {
-    //             return res.status(204); // 204 do not use content
-    //         }
-    //     } catch (err) {
-    //         return res.status(500).send({ message: `Todo with id '${id}' is not found.` });
-    //     }
+            if (!producto) {
+                return res.status(404).send({ message: 'Not Found Error' });
+            } else {
+                return res.status(200).send({_id: id, message:'Removed'}); 
+            }
+        } catch (err) {
+            return res.status(500).send({ message: `Producto with id '${id}' is not found.` });
+        }
 
-    // });
+    });
+
 
 };
