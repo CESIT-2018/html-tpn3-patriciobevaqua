@@ -1,21 +1,23 @@
 # Código gitignore para evitar procesar los directorios de las dependencias
 
-primerParcial/formulario/
-primerParcial/ecommerce/
+180629_API/node_modules
 
-primerParcial/180608_ejemploexpress/node_modules
-primerParcial/180615_TP5/node_modules
+1_primerParcial/formulario/
+1_primerParcial/ecommerce/
+
+1_primerParcial/180608_ejemploexpress/node_modules
+1_primerParcial/180615_TP5/node_modules
 
 # Versiones anteriores de Código de html-css-js 
-primerParcial/180615_TP5/public/z_versionesAnteriores
-primerParcial/180615_TP5/public/contacto/css/contactoV0.css
-primerParcial/180615_TP5/public/contacto/js/validacionV0.js
+1_primerParcial/180615_TP5/public/z_versionesAnteriores
+1_primerParcial/180615_TP5/public/contacto/css/contactoV0.css
+1_primerParcial/180615_TP5/public/contacto/js/validacionV0.js
 
-crud-app-programacion3/node_modules
-crud-app-programacion3/client/node_modules
+2_segundoParcial/crud-app-programacion3/node_modules
+2_segundoParcial/crud-app-programacion3/client/node_modules
 
-crud-app-programacion3-masterV3Client/node_modules
-crud-app-programacion3-masterV3Client/client/node_modules
+2_segundoParcial/crud-app-programacion3-masterV3Client/node_modules
+2_segundoParcial/crud-app-programacion3-masterV3Client/client/node_modules
 
-crud-app-programacion3-masterV4Client/node_modules
-crud-app-programacion3-masterV4Client/client/node_modules
+2_segundoParcial/crud-app-programacion3-masterV4Client/node_modules
+2_segundoParcial/crud-app-programacion3-masterV4Client/client/node_modules
