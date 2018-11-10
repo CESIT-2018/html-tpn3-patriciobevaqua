@@ -1,0 +1,42 @@
+
+Ejercicio 1:
+Crear una función que acepta una oración de tipo string como parámetro y busca  la palabra que tiene mayor longitud.
+Ejemplo entrada: 'El desarrollo Web es entretenido' 
+Salida: 'entretenido' 
+
+Ejercicio 2:
+Dada una cantidad de dinero (entera) y un las monedas posibles, devolver la misma cantidad de dinero en monedas.
+Ejemplo : dameMonedas(46, [25, 10, 5, 2, 1])
+Donde 46 es la cantidad de plata. y 25, 10, 5, 2, 1 son las monedas que existen. 
+Salida : 25, 10, 10, 1
+
+Ejercicio 3:
+Crear una función que retorne el primer elemento de un array. Si a la función le pasamos un segundo parámetro n (entero) nos retornará los n primeros elementos.
+Datos de prueba : 
+console.log(primer([7, 9, 0, -2])); 
+console.log(primer([],3));
+console.log(primer([7, 9, 0, -2],3));
+console.log(primer([7, 9, 0, -2],6));
+console.log(primer([7, 9, 0, -2],-3));
+Salida : 
+7
+[] 
+[7, 9, 0] 
+[7, 9, 0, -2] 
+[] 
+
+Ejercicio 4:
+Dado dos arrays con valores individuales, hacer una función que retorne un array con la suma de cada valor individual del mismo índice de cada array.
+Ejemplo : 
+array1 = [1,0,2,3,4];
+array2 = [3,5,6,7,8,13];
+Salida : 
+[4, 5, 8, 10, 12, 13] 
+
+Ejercicio 5:
+Crear las siguientes funciones:
+- Función que retornar un arrya todos los números pares que hay entre 1 y X
+- Función quer retornar un array con todos los números impares entre 1 y X
+- Función que retorna un array con todos los números primos entre 1 y X
+- Función que retorna un array con todos los números no primos entre 1 y X
+- Una función llamada integradora que recibe un número entero X y una función,  (par, impar, primo, no primo) y muestra el contenido del resultado de la función que le pasamos. 

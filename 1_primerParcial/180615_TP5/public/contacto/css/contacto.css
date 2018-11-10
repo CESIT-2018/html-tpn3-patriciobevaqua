@@ -1,0 +1,26 @@
+#contacto{width:100%;height:auto;float:left;margin:0;padding:10px 0 0 0}
+#contacto ul.contacto{width:100%;height:auto;float:left;margin:0;padding:0}
+#contacto ul.contacto li.texto{display:block;width:100%;height:auto;float:left;margin:0 0 30px 0;padding:0;text-align:justify;font-size:.95em}
+#contacto ul.contacto li{display:block;float:left;height:auto;margin:8px 2% 15px 0;padding:0;width:46%}
+#contacto ul.contacto li.condiciones{border:0 none;color:#999;float:left;font-size:1em;margin:3px 0 0;padding:5px 0 5px 3%;width:46%}
+#contacto ul.contacto li span.condiciones{background:none repeat scroll 0 0 #bbb;border:1px solid #ccc;color:#ffffff;float:left;font-size:.6em;height:45px;margin:10px 0 0;overflow-y:scroll;padding:5px 10px;text-align:justify;width:89.5%}
+#contacto ul.contacto li span.condiciones p{margin:0;padding:0}
+#contacto ul.contacto li span.captcha{float:left;width:auto;height:auto;font-size:.8em;margin:20px 0 0 0;padding:0 15px 5px 0;border:0;color:#999}
+#contacto ul.contacto li span.captcha a{background:url(../img/recargar.png) 0 0 no-repeat;color:#666;padding:3px 0 0 33px;float:left;height:30px;margin:0}
+#contacto ul.contacto li span.captcha a:hover{color:#666666;background:url(../img/recargar_hover.png) 0 0 no-repeat}
+#contacto label{float:left;font-size:.9em;margin:5px 0 3px;padding:3px 10px 0 0;text-align:left;text-transform:uppercase;width:90%;text-indent:10px;color:#666666}
+#contacto select{float:left;font-size:.8em;margin:3px 0 0 0;padding:4px 8px 5px 5px;border:0;border:1px solid #ddd;color:#999;font-family:inherit;background:#ffffff;transition:background .5s ease}
+#contacto select:hover{background:#666666;color:#ffffff}
+#contacto input{width:90%;float:left;padding:8px;margin:0 0 2px 0;font-size:.85em;border:1px solid #ddd;color:#999;font-family:inherit;background:#ffffff;transition:background .5s ease}
+#contacto input:hover{background:#666666;color:#ffffff}
+#contacto textarea{width:90%;min-height:100px;float:left;margin:3px 0 2px 0;padding:5px 0 0 10px;font-size:.85em;font-family:inherit;border:1px solid #ddd;color:#999;background:#FFF;transition:background .5s ease}
+#contacto textarea:hover{background:#666666;color:#ffffff}
+#contacto img.img_captcha{display:block;float:left;margin:8px 10px 12px 0;border:1px solid #ddd}
+div.botonEnviar{border-bottom:1px solid #eee;color:#999;cursor:pointer;float:left;margin:15px 0 0;padding:0 0 5px;width:100%}
+#contacto input.boton{color:#999;margin:0 0 0 40%;border:1px solid #ddd;width:auto;padding:3px 10px;cursor:pointer;background:#eee;box-shadow:0 1px 3px #ccc;transition:background .5s ease;width:22%}
+#contacto input.boton:hover{color:#ffffff;text-transform:uppercase;background:#666666;border:1px solid #ffffff;box-shadow:0 1px 3px #999}
+#contacto span.acepto{width:100%;height:auto;float:left;margin:10px 0 0 0;padding:0}
+#contacto span.acepto input.acepto{width:20px;float:left;margin:0;padding:0}
+#contacto span.acepto label.clausula{width:92%;float:left;margin:-1px 0 0 0;padding:0;text-align:left;font-size:.7em;letter-spacing:-.3px;text-transform:none}
+#contacto span.acepto label.clausula a{display:inline}
+#contacto span.acepto label.clausula a:hover{text-transform:uppercase}

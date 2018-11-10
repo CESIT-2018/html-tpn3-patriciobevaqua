@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta htpp-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+
+
+    <!-- para formulario de contacto 1 -->
+    <link rel="stylesheet" type="text/css" href="./contacto/css/contacto.css" />
+    <link rel="stylesheet" href="./contacto/css/formularios.css" />
+    <script type="text/javascript" src="./contacto/js/validacion.js"></script>
+    <script type="text/javascript" src="./contacto/js/formularios.js"></script>
+
+    <title> Contacto</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="mx-auto" style="width: 500px;">
+
+            <br/>
+            <br/>
+            <a href="/" class="btn btn-primary">Inicio</a>
+            <a href="./2_perfil.html" class="btn btn-secondary">Perfil</a>
+            <a href="./3_servicios.html" class="btn btn-success">Servicios</a>
+            <a href="productos" class="btn btn-danger">Productos</a>
+            <a href="./5_contacto.html" class="btn btn-warning">Contacto</a>
+
+        </div>
+
+        <div class="mx-auto" style="width: 900px;">
+            <br/>
+            <br/>
+            <br/>
+
+            <h1>Vias de Contacto:</h1>
+            <p class="lead">Tel.: 4393910</p>
+            <p class="lead">email: restore@gmail.com</p>
+
+            <br/>
+            <br/>
+
+            <!--formulario de contacto 1-->
+            <div id="contacto">
+                <h3>Formulario de Contacto:</h3>
+                <form name='form_contacto' id='form_contacto' action='' method='post' onsubmit="javascript:return(validarContacto(this));return false;">
+                    <ul class="contacto">
+
+                        <li>
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" name="nombre" id="nombre" size="40" placeholder="Nombre" onclick="this.select()" required />
+
+                            <label for='sexo'>Sexo:</label>
+                            <!--<input type="text" name="sexo" id="sexo" size="40" placeholder="Sexo" onclick="this.select()" required /> -->
+                            <select id='sexo' name='sexo' required>
+                                <option value='' selected='selected' disabled>-Seleccione-</option>
+                                <option value='1'>Masculino</option>
+                                <option value='2'>Femenino</option>
+                            </select>
+                            <label for="email">Email:</label>
+                            <input type="email" name="email" id="email" size="35" placeholder="Email" onclick="this.select()" required/>
+                            <label for="repetir_email">Repetir email:</label>
+                            <input type="email" name="repetir_email" id="repetir_email" size="35" placeholder="Repetir email" onclick="this.select()"
+                                autocomplete="off" required/>
+                            <label for="telefono">Telefono:</label>
+                            <input type="tel" id="telefono" name="telefono" size="10" placeholder="Telefono" onclick="this.select()" required/>
+                        </li>
+                        <li class="condiciones">
+                            <label for="mensaje">Comentarios:</label>
+                            <textarea cols="30" rows="5" id="mensaje" name="mensaje" onclick="this.select()" placeholder="Comentarios" required></textarea>
+                            <input type="hidden" value="4D7YS" name="escogido" id="escogido" />
+                            <input type="hidden" value="1" id="codigo_actual" />
+                            <img id="imagen_captcha" name="imagen_captcha" src="http://www.udecontrol.es/landing/modulo_base/includes/aplicaciones/contacto/img/captcha2.jpg"
+                                alt="captcha" class="img_captcha" />
+
+                            <span class='captcha'>
+                                <a href="javascript:cambiarCaptcha('http://www.udecontrol.es/landing/')" style="font-size:1.2em">Recargar captcha</a>
+                            </span>
+
+                            <input type="text" placeholder="Introduzca los caracteres de la imagen" id="captcha" name="captcha" onclick="this.select()"
+                                size="35" autocomplete="off" required />
+                            <span class='condiciones'>
+                                <!DOCTYPE html>
+                                <html>
+
+                                <head>
+                                </head>
+
+                                <body>
+                                    <p>CONDICIONES: El usuario acepta que los datos enviados mediante este formulario ser&aacute;n
+                                        gestionados &uacute;nicamente por la empresa propietaria del sitio web que no compartir&aacute;
+                                        dicha informaci&oacute;n salvo consulta previa al usuario. En cualquier momento el
+                                        usuario puede solicitar la baja de sus datos en nuestra base de datos</p>
+                                </body>
+
+                                </html>
+                            </span>
+                            <span class='acepto'>
+                                <input type='checkbox' name='acepto' id='acepto' class='acepto' required>
+                                <label for='acepto' class='clausula'>Acepto la cláusula de protección de datos de carácter personal.</label>
+                            </span>
+                        </li>
+                    </ul>
+
+                    <div class="botonEnviar">
+                        <input type="submit" value="Enviar" class="boton" onclick='$("#form_contacto").submit();return false;' />
+                        <br/>
+                        <br/>
+                    </div>
+                    <input type="hidden" value="1" name="enviado" />
+                    <input type="text" id="apellidos" name="apellidos" style="display:none" />
+                    <input type="text" id="movil" name="movil" style="display:none" />
+                    <input type="hidden" value="###212.89.6.21" name="servidor_post" />
+                    <input type="hidden" value="###186.133.180.192" name="usuario_post" />
+                    <input type="hidden" value="" name="referencia_post" />
+                </form>
+            </div>
+
+
+            <!--fin formulario de contacto 1-->
+
+
+            <br/>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Optional JavaScript -->
+
+    <!-- para formulario de contacto 3 -->
+    <script src="./contacto/js/validator.js"></script>
+
+
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery.validate.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="./bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
