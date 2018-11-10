@@ -1,1 +1,0 @@
-# 00practica1
