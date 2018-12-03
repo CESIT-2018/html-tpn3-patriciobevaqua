@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
 import reducers from './reducers';
-import { Provider } from 'react-redux';
+import { Provider } from 'react-redux';   //une react con redux
 import { createStore, applyMiddleware } from 'redux';
 import reduxThunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension'; 
