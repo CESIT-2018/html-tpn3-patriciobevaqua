@@ -33,8 +33,8 @@ class LeftMenu extends Component {
                             </NavLink>
                                 </li>
                                 <li className="nav-item" >
-                                    <NavLink exact={true} className="nav-link"  to={'/#'}>
-                                        Esto es un Entity
+                                    <NavLink exact={true} className="nav-link"  to={'/contactos'}>
+                                        Contacto
                             </NavLink>
                                 </li>
 
