@@ -58,8 +58,10 @@ class ListTodo extends Component {
 
 function mapStateToProps(state) {
     return {
-        listTodos: state.todoDS.listTodos
+        listTodos: state.todoDS.listTodos   //acá busca en Data Store todosDS (es el ReducerTodos) la lista listTodos. 
+                                            // y los relaciona en el index de los reducers
     };
 }
 
-export default connect(mapStateToProps, {fetchTodos, deleteTodo})(ListTodo);
+export default connect(mapStateToProps, {fetchTodos, deleteTodo})(ListTodo);  //conectamos nuestro componente a redux. 
+//Bindeamos el componente al reducer, que sería el data store y a dos acciones de los actions

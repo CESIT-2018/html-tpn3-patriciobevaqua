@@ -31,11 +31,14 @@ class ListProducto extends Component {
                             icon="eye"
                         />
                         <Link to={`/productos/${producto._id}/show`} className="mr-2 badge badge-success">Ver</Link>&nbsp;
+                       
                         <FontAwesomeIcon
                             icon="edit"
                         />
 
                 <Link to={`/productos/${producto._id}/edit`} className="mr-2 badge badge-secondary">Editar</Link>&nbsp;
+               
+               
                 <FontAwesomeIcon
                             icon="trash-alt"
                         />

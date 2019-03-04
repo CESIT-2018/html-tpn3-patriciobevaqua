@@ -5,6 +5,7 @@ const keys = require("./src/conf");
 
 require('./src/models/Todo');
 require('./src/models/Producto');
+require('./src/models/Servicio');
 
 mongoose.Promise = global.Promise;
 mongoose.connect(keys.mongoURI, { useNewUrlParser: true });
@@ -14,5 +15,6 @@ app.use(bodyParser.json());
 
 require('./src/routes/todoRoutes')(app);
 require('./src/routes/productoRoutes')(app);
+require('./src/routes/servicioRoutes')(app);
 
 app.listen(keys.PORT, () => console.info(`Listen in ${keys.PORT}`));

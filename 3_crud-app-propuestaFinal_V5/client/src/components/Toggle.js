@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem } from 'reactstrap';
+import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem,Button } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 import LeftMenu from './LeftMenu';
 
@@ -11,35 +11,39 @@ class Toggle extends Component {
 
     constructor(props) {
         super(props);
-
-        this.toggleNavbar = this.toggleNavbar.bind(this);
-        this.state = {
-            collapsed: true
-        };
-    }
-
-    toggleNavbar() {
-        this.setState({
-            collapsed: !this.state.collapsed
-        });
-    }
-
+        this.toggle = this.toggle.bind(this);
+        this.state = { collapse: false };
+      }
+    
+      toggle() {
+        this.setState({ collapse: !this.state.collapse });
+      }
 
 
     render() {
         return (
+
+
             <div>
+            <Button color="primary" onClick={this.toggle} style={{ marginBottom: '' }}>Toggle</Button>
+            <Collapse isOpen={this.state.collapse}>
+            
+            
+            
+            
+            
+            
+            </Collapse>
+          </div>
 
-                <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
-                <Collapse isOpen={!this.state.collapsed} >
-                    <LeftMenu />
 
 
-                </Collapse>
-            </div>
 
         )
     }
 }
 
 export default Toggle;
+
+
+// <LeftMenu />

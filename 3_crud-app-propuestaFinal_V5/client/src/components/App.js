@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import './dashboard.css'
+import './dashboard.css';
+import './_nav.scss';
 
 
 
@@ -18,6 +19,7 @@ class App extends Component {
                         
                         <Header />
 
+                        <LeftMenu />
                         <MainContainer />
                     </div>
                 </BrowserRouter>

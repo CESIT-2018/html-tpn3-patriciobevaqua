@@ -1,5 +1,10 @@
 # Código gitignore para evitar procesar los directorios de las dependencias
 
+
+z_copias
+z_otros
+
+
 180629_API/node_modules
 
 1_primerParcial/formulario/

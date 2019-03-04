@@ -12,15 +12,29 @@ const validate = (values) => {
         errors.nombre = 'Debe contener al menos 5 caracteres'
     }
 
+  // if (!values.email) {
+    //   errors.email = 'Required'
+    // } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
+    //   errors.email = 'Invalid email address'
+    // }
+    // if (!values.age) {
+    //   errors.age = 'Required'
+    // } else if (isNaN(Number(values.age))) {
+    //   errors.age = 'Must be a number'
+    // } else if (Number(values.age) < 18) {
+    //   errors.age = 'Sorry, you must be at least 18 years old'
+    // }
+
+
     return errors
 }
 
 class ContactoForm extends Component {
 
     componentWillReceiveProps = (nextProps) => { // Load Contact Asynchronously
-        const { producto } = nextProps;
-        if (producto._id !== this.props.producto._id) { // Initialize form only once
-            this.props.initialize(producto)
+        const { contacto } = nextProps;
+        if (contacto._id !== this.props.contacto._id) { // Initialize form only once
+            this.props.initialize(contacto)
             this.isUpdated = true;
         }
     }
@@ -50,10 +64,10 @@ class ContactoForm extends Component {
             <div>
                 <form onSubmit={handleSubmit}>
                     <Field name="nombre" type="text" component={this.renderField} label="Nombre" />
-                    <Field name="descripcion" type="text" component={this.renderField} label="Descripcion" />
-                    <Field name="stock" type="text" component={this.renderField} label="Stock" />
-                    <Field name="precio" type="text" component={this.renderField} label="Precio" />
-                    <Field name="total" type="text" component={this.renderField} label="total" />
+                    <Field name="apellido" type="text" component={this.renderField} label="Apellido" />
+                    <Field name="email" type="email" component={this.renderField} label="e-mail" />
+                    <Field name="telefono" type="text" component={this.renderField} label="Telefono" />
+                    
                     <Link className="btn btn-light mr-2" to="/productos">Cancelar</Link>
                     <button className="btn btn-primary  mr-2" type="submit" >{this.isUpdated ? "Update" : "Crear"}</button>
                 </form>
@@ -62,4 +76,4 @@ class ContactoForm extends Component {
     }
 }
 
-export default reduxForm({ form: 'producto' , validate})(ContactoForm.js);
+export default reduxForm({ form: 'contacto' , validate})(ContactoForm);

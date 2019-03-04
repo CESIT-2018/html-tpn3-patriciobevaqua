@@ -13,6 +13,16 @@ import NewProducto from './productosPages/NewProducto';
 import EditProducto from './productosPages/EditProducto';
 
 
+import ListadoServicios from './serviciosPages/ListadoServicios';
+import NuevoServicio from './serviciosPages/NuevoServicio';
+import VerServicios from './serviciosPages/VerServicios';
+import EditarServicios from './serviciosPages/EditarServicios';
+
+
+
+import ContactoForm from './ContactoForm';
+
+
 
 class MainContainer extends Component {
 
@@ -32,6 +42,10 @@ class MainContainer extends Component {
                         <Route exact path="/productos/:id/show" component={ShowProducto}/>
                         <Route exact path="/productos/:id/edit" component={EditProducto}/>
 
+                       <Route exact path="/servicios" component={ListadoServicios}/>
+                        <Route exact path="/servicios/new" component={NuevoServicio}/>
+                        <Route exact path="/servicios/:id/show" component={VerServicios}/>
+                        <Route exact path="/servicios/:id/edit" component={EditarServicios}/>
  
  
                     </main>
@@ -42,3 +56,6 @@ class MainContainer extends Component {
 }
 
 export default MainContainer;
+
+
+//  <Route exact path="/contactos" component={ContactoForm}/>

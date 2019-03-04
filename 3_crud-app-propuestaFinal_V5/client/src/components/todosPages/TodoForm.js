@@ -52,7 +52,7 @@ class TodoForm extends Component {
         const { handleSubmit, loading } = this.props;
 
         if(loading){
-            return (<span>loading...</span>);
+            return (<span>Cargando la información...</span>);
         }
 
         return (
