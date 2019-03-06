@@ -19,6 +19,7 @@ app.use(bodyParser.json());
 require('./src/routes/todoRoutes')(app);
 require('./src/routes/productoRoutes')(app);
 require('./src/routes/servicioRoutes')(app);
+require('./src/routes/contactoRoutes')(app);
 require('./src/routes/usuarioRoutes')(app);
 
 app.listen(keys.PORT, () => console.info(`Listen in ${keys.PORT}`));
