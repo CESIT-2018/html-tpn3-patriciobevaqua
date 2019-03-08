@@ -15,7 +15,7 @@ module.exports = app => {
         try {
             var regExpTerm = new RegExp(req.query.term, 'i');
             var regExpSearch = [{ name: { $regex: regExpTerm } }, { description: { $regex: regExpTerm } }];
-            const servicios = await Producto.find({ '$or': regExpSearch });
+            const servicios = await Servicio.find({ '$or': regExpSearch });
 
             res.status(200).send(servicios);
         } catch (e) {
@@ -103,7 +103,7 @@ module.exports = app => {
         
         const servicio = await Servicio.findOne({ _id: id });
         
-        if (!producto) {
+        if (!servicio) {
             return res.status(404).send({ message: `Error when update record with id ${id}.\n\n${e}` })
         }
 

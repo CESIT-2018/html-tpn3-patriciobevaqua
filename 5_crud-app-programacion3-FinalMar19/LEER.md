@@ -15,8 +15,7 @@ donde están los archivos packagejson se ejecuta npm install para instalar depen
 luego desde la carpeta de origen se ejecuta comando
 npm run dev para levantar tanto el servidor local como el cliente
 es lo mismo que ejecutar npm start en el local server y en el cliente
+------------------
 
-
----
 login utilizado:
 https://appdividend.com/2018/07/18/react-redux-node-mongodb-jwt-authentication/

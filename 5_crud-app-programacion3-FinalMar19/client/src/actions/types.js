@@ -24,17 +24,7 @@ export const productosTypes = {
     DELETE_PRODUCTO: 'DELETE_PRODUCTO'
 };
 
-export const serviciosTypes = {   //arreglar los nombres!!!
-//LISTA_SERVICIOS_PENDIENTE: 'lista_servicios_pendiente',
-//LISTA_SERVICIOS_CUMPLIDO: 'lista_servicios_cumplido',
-//LISTA_SERVICIOS_RECHAZADO: 'lista_servicios_rechazado',
-//NEW_SERVICIO:'new_servicio',
-//SAVE_SERVICIO:'save_servicio',
-//FETCH_SERVICIO_BY_ID_PENDIENTE:'fetch_servicio_by_id_pendiente',
-//FETCH_SERVICIO_BY_ID_CUMPLIDO:'fetch_servicio_by_id_cumplido',
-//FETCH_SERVICIO_BY_ID_RECHAZADO:"fetch_servicio_by_id_rechazado",
-//UPDATE_SERVICIO:'pdate_servicio',
-//DELETE_SERVICIO:'delete_servicio'
+export const serviciosTypes = {   //arreglar los nombres!!! ->> OK!!
 FETCH_SERVICIOS_PENDING: 'FETCH_SERVICIOS_PENDING',
 FETCH_SERVICIOS_FULFILLED: 'FETCH_SERVICIOS_FULFILLED',
 FETCH_SERVICIOS_REJECTED: 'FETCH_SERVICIOS_REJECTED',

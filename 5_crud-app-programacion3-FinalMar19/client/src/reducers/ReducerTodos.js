@@ -11,12 +11,12 @@ const INITIAL_STATE = {
   errors: {}
 };
 
-export default function (state = INITIAL_STATE, action) {
+export default function (state = INITIAL_STATE, action) {   //función reductora tine como parametro el estado y una acción y retorna un nuevo estado
   switch (action.type) {
     case todosTypes.FETCH_TODOS_FULFILLED:
       return {
         ...state,
-        listTodos: action.payload.data,
+        listTodos: action.payload.data,   //toma del payload de la acción el cuerpo
         loading: false
       };
     

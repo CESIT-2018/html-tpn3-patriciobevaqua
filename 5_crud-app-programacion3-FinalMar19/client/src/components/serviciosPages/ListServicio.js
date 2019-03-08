@@ -1,41 +1,48 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import { fetchTodos, deleteTodo } from '../../actions';
+import { fetchServicios, deleteServicio } from '../../actions';
 import { Link } from 'react-router-dom';
 import LeftMenu from '../LeftMenu';
 import { Nav, NavItem, NavLink } from 'reactstrap';
 
-import { library } from '@fortawesome/fontawesome-svg-core';    //acá lee puse la librería awesome para los íconos 
+import { library } from '@fortawesome/fontawesome-svg-core';
 import { faEnvelope, faKey, faHome,faListAlt,faEye, faTrashAlt,faEdit } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-library.add(faEnvelope, faKey, faHome,faListAlt,faEye, faTrashAlt,faEdit); //librería awesome
+library.add(faEnvelope, faKey, faHome,faListAlt,faEye, faTrashAlt,faEdit);
 
-class ListTodo extends Component {
+class ListServicio extends Component {
 
-    componentDidMount() {           //función del ciclo de vida que se activa al cargar el componente 
-        this.props.fetchTodos();    //va a buscar la acción buscame todos los 'todo'
+    componentDidMount() {
+        this.props.fetchServicios();
     }
 
-    renderTodos() {
+    renderServicios() {
        
-        return this.props.listTodos.map(todo => {
+        return this.props.listServicios.map(servicio => {
             return (
-            <tr key={todo._id}>
-                <td>{todo.isDone ? "hecho" : "no"}</td>
-                <td>{todo.name}</td>
-                <td>{todo.description}</td>
-                <td>{todo.name+' - '+todo.description}</td>
+            <tr key={servicio._id}>
+                <td>{servicio.nombre}</td>
+                <td>{servicio.descripcion}</td>
+                <td>{servicio.precioPorHora}</td>
                 <td>
-                    <FontAwesomeIcon icon="eye"/>
-                    <Link to={`/todos/${todo._id}/show`} className="mr-2 badge badge-success">Ver</Link>&nbsp;
+                        <FontAwesomeIcon
+                            icon="eye"
+                        />
+                        <Link to={`/servicios/${servicio._id}/show`} className="mr-2 badge badge-success">Ver</Link>&nbsp;
                        
-                    <FontAwesomeIcon icon="edit"/>
-                    <Link to={`/todos/${todo._id}/edit`} className="mr-2 badge badge-secondary">Editar</Link>&nbsp;
+                        <FontAwesomeIcon
+                            icon="edit"
+                        />
+
+                <Link to={`/servicios/${servicio._id}/edit`} className="mr-2 badge badge-secondary">Editar</Link>&nbsp;
                
-                    <FontAwesomeIcon icon="trash-alt"/>
-                    <a className="mr-2 badge badge-danger" href="#more" onClick={() => { if (window.confirm('¿Está seguro que desea eliminar este ítem?')) this.props.deleteTodo(todo._id) }}>Eliminar</a>
-                </td>
+               
+                <FontAwesomeIcon
+                            icon="trash-alt"
+                        />
+                <a className="mr-2 badge badge-danger" href="#more" onClick={() => { if (window.confirm('¿Está seguro que desea eliminar este ítem?')) this.props.deleteServicio(servicio._id) }}>Eliminar</a>
+                    </td>
             </tr>
             )
         });
@@ -46,13 +53,13 @@ class ListTodo extends Component {
             <div>
                                <LeftMenu/>
 
-                <h2>Listando Todos</h2>
+                <h2>Listando Servicios</h2>
 
             <p className="">
 
                 <Nav pills>
                 <NavItem>
-                    <NavLink href="/todos/new" className="btn btn-primary  mr-2">Nuevo</NavLink>
+                    <NavLink href="/servicios/new" className="btn btn-primary  mr-2">Nuevo</NavLink>
                 </NavItem>
                 <NavItem>
                     <NavLink href="/welcomes" className="btn btn-primary  mr-2">Volver</NavLink>
@@ -66,16 +73,15 @@ class ListTodo extends Component {
                     <table className="table table-striped table-sm">
                         <thead>
                             <tr>
-                                <th>Hecho</th>
                                 <th>Nombre</th>
                                 <th>Descripción</th>
-                                <th>Concatena Nombre y Descripción</th>
+                                <th>Precio x Hr</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
                             {
-                                this.renderTodos()
+                                this.renderServicios()
                             }
                         </tbody>
                     </table>
@@ -87,17 +93,17 @@ class ListTodo extends Component {
 
 function mapStateToProps(state) {
     return {                                        
-        listTodos: state.todoDS.listTodos           //acá busca en Data Store todosDS (es el ReducerTodos) la lista listTodos. 
+        listServicios: state.servicioDS.listServicios           //acá busca en Data Store serviciosDS (es el ReducerServicios) la lista listServicios. 
     };                                              // y los relaciona en el index de los reducers
 }
 
-export default connect(mapStateToProps, {fetchTodos, deleteTodo})(ListTodo);   //conectamos nuestro componente a redux. 
+export default connect(mapStateToProps, {fetchServicios, deleteServicio})(ListServicio);   //conectamos nuestro componente a redux. 
                                                                                 //Bindeamos el componente al reducer, que sería el data store y a dos acciones de los actions
 
 
 //<p className="">
 
-//<Link to="/todos/new" className="btn btn-primary">Nuevo</Link>
+//<Link to="/servicios/new" className="btn btn-primary">Nuevo</Link>
                 
 //<Link to="/" className="btn btn-primary">Volver</Link>
 //</p>

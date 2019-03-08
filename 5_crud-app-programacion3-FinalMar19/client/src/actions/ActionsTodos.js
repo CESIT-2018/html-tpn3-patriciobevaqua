@@ -9,7 +9,7 @@ export const fetchTodos = () => async dispatch => {
   
   try {
     var res = await axios.get('/api/todos');
-    dispatch({ type: todosTypes.FETCH_TODOS_FULFILLED, payload: res });
+    dispatch({ type: todosTypes.FETCH_TODOS_FULFILLED, payload: res });  // método dispatch con la acción que contiene el type y un payload 
   } catch (error) {
     dispatch({ type: todosTypes.FETCH_TODOS_REJECTED, payload: error });
   }

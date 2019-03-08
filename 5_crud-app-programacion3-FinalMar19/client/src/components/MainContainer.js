@@ -20,14 +20,14 @@ import Login from './sesionPages/Login';
 import ReactWidgetsForm from './ReactWidgetsForm/ReactWidgetsForm';
 import Navbar from './Navbar';
 
-/*import ListTodo from './productosPages/ListTodo';
-import ShowTodo from './productosPages/ShowTodo';
-import NewTodo from './productosPages/NewTodo';
-import EditTodo from './productosPages/EditTodo';
-import ListTodo from './serviciosPages/ListTodo';
-import ShowTodo from './serviciosPages/ShowTodo';
-import NewTodo from './serviciosPages/NewTodo';
-import EditTodo from './serviciosPages/EditTodo';*/
+import ListProducto from './productosPages/ListProducto';
+import ShowProducto from './productosPages/ShowProducto';
+import NewProducto from './productosPages/NewProducto';
+import EditProducto from './productosPages/EditProducto';
+import ListServicio from './serviciosPages/ListServicio';
+import ShowServicio from './serviciosPages/ShowServicio';
+import NewServicio from './serviciosPages/NewServicio';
+import EditServicio from './serviciosPages/EditServicio';
 
 class MainContainer extends Component {
 
@@ -57,16 +57,16 @@ class MainContainer extends Component {
                         <Route exact path="/ReactWidgetsForm" component={ReactWidgetsForm}/>
 
 
-                      <Route exact path="/productos" component={ListTodo}/>
-                        <Route exact path="/productos/new" component={NewTodo}/>
-                        <Route exact path="/productos/:id/show" component={ShowTodo}/>
-                        <Route exact path="/productos/:id/edit" component={EditTodo}/>
+                      <Route exact path="/productos" component={ListProducto}/>
+                        <Route exact path="/productos/new" component={NewProducto}/>
+                        <Route exact path="/productos/:id/show" component={ShowProducto}/>
+                        <Route exact path="/productos/:id/edit" component={EditProducto}/>
                       
                       
-                      <Route exact path="/servicios" component={ListTodo}/>
-                        <Route exact path="/servicios/new" component={NewTodo}/>
-                        <Route exact path="/servicios/:id/show" component={ShowTodo}/>
-                        <Route exact path="/servicios/:id/edit" component={EditTodo}/>
+                      <Route exact path="/servicios" component={ListServicio}/>
+                        <Route exact path="/servicios/new" component={NewServicio}/>
+                        <Route exact path="/servicios/:id/show" component={ShowServicio}/>
+                        <Route exact path="/servicios/:id/edit" component={EditServicio}/>
 
                       
                       

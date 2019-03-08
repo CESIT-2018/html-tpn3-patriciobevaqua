@@ -2,7 +2,7 @@
 import React, {Component} from 'react';
 import { Nav, NavItem, NavLink } from 'reactstrap';
 
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { logoutUser } from '../actions/authentication';

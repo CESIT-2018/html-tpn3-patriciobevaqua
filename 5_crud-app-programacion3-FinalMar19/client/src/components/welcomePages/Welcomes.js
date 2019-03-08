@@ -39,7 +39,7 @@ class Welcomes extends Component {
 
                                 <p> </p> 
 
-                                <img src={foto4x4} className="App-logo"/>                      
+                                <img src={foto4x4} alt="foto" className="App-logo"/>                      
                             </Col>
                     </Row>
                 

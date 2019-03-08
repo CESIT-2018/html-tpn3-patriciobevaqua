@@ -23,7 +23,7 @@ const validate = (values) => {
 
       if (!values.claveValida) {
         errors.claveValida = 'ingrese nuevamente su clave'
-      } else if (values.claveValida != values.clave) {
+      } else if (values.claveValida !== values.clave) {
         errors.claveValida = 'No coinciden las claves ingresadas'
       }
 

@@ -18,8 +18,8 @@ const users = require('./src/routes/user');
 
 mongoose.Promise = global.Promise;
 mongoose.connect(keys.mongoURI, { useNewUrlParser: true }).then(
-    () => {console.log('Database is connected') },
-    err => { console.log('Can not connect to the database'+ err)}
+    () => {console.log('Se ha contectado la base de datos') },
+    err => { console.log('No se puede conectar la base de datos'+ err)}
 );
 
 const app = express();
